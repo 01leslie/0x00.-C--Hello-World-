@@ -3,11 +3,11 @@
 #include <stdlib.h>
 /**
  * struct listint_s - singly linked list
- * @n: integer
- * @next: points to the next node
+ * @n: is an integer
+ * @next: is a pointer to the next project
  *
  * Description: singly linked list node structure
- * for Holberton project
+ * for my alx project
  */
 typedef struct listint_s
 {
