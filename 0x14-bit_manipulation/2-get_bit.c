@@ -1,9 +1,9 @@
 #include"main.h"
 
 /**
- * get_bit - returns the value of a bit at a given index.
- * @n: number to check bits in
- * @index: index at which to check bit
+ * get_bit - returns a bit value at a given index.
+ * @n: number for checking the bits
+ * @index: index to check bits
  *
  * Return: value of the bit, or -1 if there is an error
  */
