@@ -3,47 +3,29 @@
 #include <stdlib.h>
 #include "main.h"
 
-int _strlen(const char *s);
-
-/**
- * str_concat - concatenate two string
- * @s1: pointer to first string
- * @s2: pointer to second string
- *
- * Return: pointer to the concatenated string
- */
-
 char *str_concat(char *s1, char *s2)
 {
-	int i = 0, j = 0;
-	char *output;
-
-	if (s1 == NULL)
-		s1 = "\0";
-	if (s2 == NULL)
-		s2 = "\0";
-	i = _strlen(s1);
-	j = _strlen(s2);
-
-	output = malloc((i + j) * sizeof(*s1) + 1);
-
-	if (output == 0)
-		return (NULL);
-	strcat(output, s1);
-	strcat(output, s2);
-
-	return (output);
-}
-/**
- * _strlen - get  the length of the string s
- * @s: pointer to the string whose length is required
- * Return: length of the string
- */
-int _strlen(const char *s)
+if (s1 == NULL)
 {
-	int i = 0;
-
-	for (; s[i] != '\0'; i++)
-		;
-	return (i);
+s1 = "";
 }
+if (s2 == NULL)
+{
+s2 = "";
+}
+
+/** Allocate memory to store the concatenated string**/
+size_t len_s1 = strlen(s1);
+size_t len_s2 = strlen(s2);
+char *result = (char *) malloc((len_s1 + len_s2 + 1) * sizeof(char));
+if (result == NULL)
+{
+return NULL; // Return NULL on failure to allocate memory
+}
+
+/** Copy the contents of s1 and s2 to the result string**/
+strcpy(result, s1);
+strcat(result, s2);
+return result;
+}
+
