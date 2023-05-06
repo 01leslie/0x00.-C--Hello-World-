@@ -3,20 +3,22 @@
 
 /**
  * 1-print_binary.c - prints the binary representation of a number
- *
+ *@n: int for convertion
  **/
 
-void print_binary(unsigned long int n) {
-    int bit_pos = sizeof(n) * 8 - 1; // position of the leftmost bit
-    while ((n >> bit_pos) == 0 && bit_pos > 0) {
-        bit_pos--; // skip leading zeros
-    }
-    while (bit_pos >= 0) {
-        int bit = (n >> bit_pos) & 1; // get the current bit
-        printf("%d", bit);
-        bit_pos--; // move to the next bit
-    }
-    printf("\n");
+void print_binary(unsigned long int n)
+{
+	int i, flag;
+
+	if (n == 0)
+		_putchar('0');
+	for (flag = 0, i = sizeof(n) * 8 - 1; i >= 0; i--)
+	{
+		if ((n >> i) & 1)
+			flag = 1;
+		if (flag == 1)
+			((n >> i) & 1) ? _putchar('1') : _putchar('0');
+	}
 }
 
 
